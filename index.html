@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <title>geister-viewer</title>
+</head>
+<body>
+<script src="js/main.js"></script>
+<script src="js/draw.js"></script>
+
+<h1>geister-viewer</h1>
+<table border="0">
+<tr>
+<td>
+<canvas id="board" class="board" width="384" height="384">
+  Canvasに対応したブラウザを使って下さい。
+</canvas>
+</td>
+<td>
+<select id="kif" size="18" onChange="kifChange()">
+</select>
+</td>
+</tr>
+<tr>
+<td>
+<input type="button" value="<<" onClick="buttonClick(-2)">
+<input type="button" value="<" onClick="buttonClick(-1)">
+<input type="button" value=">" onClick="buttonClick(1)">
+<input type="button" value=">>" onClick="buttonClick(2)">
+<td>
+</tr>
+<tr>
+<td>
+<form> 
+<textarea id="kifText" class="kifText" rows="10" cols="50"></textarea>
+<input type="button" value="棋譜送信" onClick="loadKif()">
+</form>
+</td>
+</tr>
+</table>
+</body>
+</html>
