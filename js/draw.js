@@ -34,16 +34,16 @@ function draw() {
         for (var j = 0;j < WIDTH; j++) {
             switch (board[i * WIDTH + j]) {
                 case 1:
-                ctx.drawImage(imgPiece,BOARD_SIZE,BOARD_SIZE,BOARD_SIZE,BOARD_SIZE,j * BOARD_SIZE + OFFSET,i * BOARD_SIZE + OFFSET,BOARD_SIZE,BOARD_SIZE);
+                ctx.drawImage(imgPiece, BOARD_SIZE, BOARD_SIZE, BOARD_SIZE, BOARD_SIZE,j * BOARD_SIZE + OFFSET, i * BOARD_SIZE + OFFSET, BOARD_SIZE, BOARD_SIZE);
                 break;
                 case 2:
-                ctx.drawImage(imgPiece,BOARD_SIZE * 2,BOARD_SIZE,BOARD_SIZE,BOARD_SIZE,j * BOARD_SIZE + OFFSET,i * BOARD_SIZE + OFFSET, BOARD_SIZE,BOARD_SIZE);
+                ctx.drawImage(imgPiece, BOARD_SIZE * 2,BOARD_SIZE, BOARD_SIZE, BOARD_SIZE,j * BOARD_SIZE + OFFSET, i * BOARD_SIZE + OFFSET, BOARD_SIZE, BOARD_SIZE);
                 break;
                 case 3:
-                ctx.drawImage(imgPiece,BOARD_SIZE,0,BOARD_SIZE,BOARD_SIZE,j * BOARD_SIZE + OFFSET,i * BOARD_SIZE + OFFSET, BOARD_SIZE,BOARD_SIZE);
+                ctx.drawImage(imgPiece, BOARD_SIZE, 0, BOARD_SIZE,BOARD_SIZE, j * BOARD_SIZE + OFFSET,i * BOARD_SIZE + OFFSET, BOARD_SIZE, BOARD_SIZE);
                 break;
                 case 4:
-                ctx.drawImage(imgPiece,BOARD_SIZE * 2,0,BOARD_SIZE,BOARD_SIZE,j * BOARD_SIZE + OFFSET,i * BOARD_SIZE + OFFSET, BOARD_SIZE,BOARD_SIZE);
+                ctx.drawImage(imgPiece, BOARD_SIZE * 2, 0, BOARD_SIZE,BOARD_SIZE, j * BOARD_SIZE + OFFSET, i * BOARD_SIZE + OFFSET, BOARD_SIZE, BOARD_SIZE);
                 break;
                 default:
                 
@@ -51,6 +51,18 @@ function draw() {
             }
         }
    }
+
+    //段と筋
+    ctx.font = "24pt serif"
+    ctx.textAlign = "center"
+    for (var i = 1; i <= HEIGHT; i++) {
+        ctx.fillText(i, OFFSET / 2, (6 - i) * BOARD_SIZE + OFFSET + OFFSET / 2 + 12);
+    }
+
+    var row = ["a","b","c","d","e","f"];
+    for (var i = 1; i <= WIDTH; i++) {
+        ctx.fillText(row[i-1], i * BOARD_SIZE + OFFSET / 2, BOARD_SIZE * HEIGHT + OFFSET + OFFSET / 2 + 12);
+    }
 }
 
 

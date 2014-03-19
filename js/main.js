@@ -47,22 +47,22 @@ function deleteParagraph(data) {
 // ボタンがクリックされた時に呼ばれる
 function buttonClick(id) {
     switch (id) {
-        case -2:
-        currentNumber = 0;
+        case -2: // 開始局面に戻る
+        currentNumber = 0; 
         break;
-        case -1:
-        currentNumber--;
+        case -1: // 1手戻す
+        currentNumber--; 
         if(currentNumber < 0) {
             currentNumber = 0;
         }
         break;
-        case 1:
+        case 1: // 1手進める
         currentNumber++;
         if(currentNumber > kif.max) {
             currentNumber = kif.max;
         }
         break;
-        case 2:
+        case 2: // 最終局面に移動
         currentNumber = kif.max;
         break;
     }
