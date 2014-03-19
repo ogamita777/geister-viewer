@@ -33,20 +33,35 @@ function draw() {
     for (var i = 0; i < HEIGHT; i++) {
         for (var j = 0;j < WIDTH; j++) {
             switch (board[i * WIDTH + j]) {
-                case 1:
-                ctx.drawImage(imgPiece, BOARD_SIZE, BOARD_SIZE, BOARD_SIZE, BOARD_SIZE,j * BOARD_SIZE + OFFSET, i * BOARD_SIZE + OFFSET, BOARD_SIZE, BOARD_SIZE);
+                case 1: 
+                if (blackMode) {
+                    ctx.drawImage(imgPiece, BOARD_SIZE, BOARD_SIZE, BOARD_SIZE, BOARD_SIZE,j * BOARD_SIZE + OFFSET, i * BOARD_SIZE + OFFSET, BOARD_SIZE, BOARD_SIZE);
+                } else {
+                    ctx.drawImage(imgPiece, 0, BOARD_SIZE, BOARD_SIZE, BOARD_SIZE,j * BOARD_SIZE + OFFSET, i * BOARD_SIZE + OFFSET, BOARD_SIZE, BOARD_SIZE);
+                }
                 break;
                 case 2:
+                if (blackMode) {                    
                 ctx.drawImage(imgPiece, BOARD_SIZE * 2,BOARD_SIZE, BOARD_SIZE, BOARD_SIZE,j * BOARD_SIZE + OFFSET, i * BOARD_SIZE + OFFSET, BOARD_SIZE, BOARD_SIZE);
+                } else {
+                    ctx.drawImage(imgPiece, 0, BOARD_SIZE, BOARD_SIZE, BOARD_SIZE,j * BOARD_SIZE + OFFSET, i * BOARD_SIZE + OFFSET, BOARD_SIZE, BOARD_SIZE);
+                }
                 break;
                 case 3:
+                if (whiteMode) {
                 ctx.drawImage(imgPiece, BOARD_SIZE, 0, BOARD_SIZE,BOARD_SIZE, j * BOARD_SIZE + OFFSET,i * BOARD_SIZE + OFFSET, BOARD_SIZE, BOARD_SIZE);
+                } else {
+                    ctx.drawImage(imgPiece, 0, 0, BOARD_SIZE,BOARD_SIZE, j * BOARD_SIZE + OFFSET,i * BOARD_SIZE + OFFSET, BOARD_SIZE, BOARD_SIZE);
+                }
                 break;
                 case 4:
+                if (whiteMode) {
                 ctx.drawImage(imgPiece, BOARD_SIZE * 2, 0, BOARD_SIZE,BOARD_SIZE, j * BOARD_SIZE + OFFSET, i * BOARD_SIZE + OFFSET, BOARD_SIZE, BOARD_SIZE);
+                } else {
+                    ctx.drawImage(imgPiece, 0, 0, BOARD_SIZE,BOARD_SIZE, j * BOARD_SIZE + OFFSET, i * BOARD_SIZE + OFFSET, BOARD_SIZE, BOARD_SIZE);
+                }
                 break;
                 default:
-                
                 break;
             }
         }

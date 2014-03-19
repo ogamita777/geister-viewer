@@ -22,6 +22,8 @@ var imgPiece; // 駒の画像
 var board = new Array(); // 盤面情報
 var currentNumber = 0; // 現在の手数
 var kif; // 棋譜情報
+var whiteMode = false;
+var blackMode = false;
 
 // 初期化
 window.onload = function() {
@@ -46,26 +48,40 @@ function deleteParagraph(data) {
 
 // ボタンがクリックされた時に呼ばれる
 function buttonClick(id) {
-    switch (id) {
+    if(kif) {
+        switch (id) {
         case -2: // 開始局面に戻る
-        currentNumber = 0; 
-        break;
+            currentNumber = 0; 
+            break;
         case -1: // 1手戻す
-        currentNumber--; 
-        if(currentNumber < 0) {
-            currentNumber = 0;
-        }
-        break;
+            currentNumber--; 
+            if(currentNumber < 0) {
+                currentNumber = 0;
+            }
+            break;
         case 1: // 1手進める
-        currentNumber++;
-        if(currentNumber > kif.max) {
-            currentNumber = kif.max;
-        }
-        break;
+            currentNumber++;
+            if(currentNumber > kif.max) {
+                currentNumber = kif.max;
+            }
+            break;
         case 2: // 最終局面に移動
-        currentNumber = kif.max;
-        break;
-    }
+            currentNumber = kif.max;
+            break;
+        }
 
+        redraw();
+    }
+}
+
+function changeMode(id) {
+    if(kif) {
+        if(id === 0) {
+            whiteMode = !whiteMode;
+        } else if(id === 1) {
+            blackMode = !blackMode;
+        }
+    }
+    
     redraw();
 }

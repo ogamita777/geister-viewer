@@ -3,7 +3,7 @@
     "white": "human",
     "black": "human2",
     "result": "1-0",
-    "max": 3,
+    "max": 10,
     "position": [
         [1,1,1,1,2,2,2,2],
         [3,4,3,4,4,3,4,3]
