@@ -46,15 +46,18 @@ function loadKif() {
 
     setStartBoard(kif);
 
+    var atoi = ["a", "b", "c", "d", "e", "f"]; 
     for (var i = 0; i < kif.kif.length; i++) {
         if(i === 0) {
             document.getElementById("boardSelect").options[i] = new Option("開始局面",i);
         } else if(i !== kif.kif.length - 1) {
-            document.getElementById("boardSelect").options[i] = new Option(i +  ". " + kif.kif[i]["from"] + " " + kif.kif[i]["to"],i);
+            if(i < 10) {
+            document.getElementById("boardSelect").options[i] = new Option("0" +  i +  ". " + atoi[kif.kif[i]["from"][0] - 1] + kif.kif[i]["from"][1] + " " + atoi[kif.kif[i]["to"][0] - 1] + kif.kif[i]["to"][1],i);
+            } else if (i >= 10) {
+                document.getElementById("boardSelect").options[i] = new Option(i +  ". " + atoi[kif.kif[i]["from"][0] - 1] + kif.kif[i]["from"][1] + " " + atoi[kif.kif[i]["to"][0] - 1] + kif.kif[i]["to"][1],i);
+            }
         } 
     }
-
-    console.log(board);
 
     draw();
 }
