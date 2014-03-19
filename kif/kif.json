@@ -1,16 +1,16 @@
 {
     "date": "2014-03-14",
-    "white": "ogamita777",
-    "black": "cpu3",
+    "white": "human",
+    "black": "human2",
     "result": "1-0",
+    "max": 3,
     "position": [
         [1,1,1,1,2,2,2,2],
         [3,4,3,4,4,3,4,3]
     ],
     "kif": [
         {
-
-
+            "type": "start"
         },
         {
             "from": [2, 2],

@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/main.css">
-  <title>geister-viewer</title>
+  <title>ガイスター棋譜再生</title>
 </head>
 <body>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>  
 <script src="js/main.js"></script>
 <script src="js/draw.js"></script>
+<script src="js/board.js"></script>
 
-<h1>geister-viewer</h1>
+<h1>ガイスター棋譜再生</h1>
 <table border="0">
 <tr>
 <td>
@@ -19,7 +20,7 @@
 </canvas>
 </td>
 <td>
-<select id="kif" size="18" onChange="kifChange()">
+<select id="boardSelect" size="20" onChange="boardChange()">
 </select>
 </td>
 </tr>
@@ -34,9 +35,19 @@
 <tr>
 <td>
 <form> 
-<textarea id="kifText" class="kifText" rows="10" cols="50"></textarea>
+<textarea id="kifText" class="kifText" rows="10" cols="50">
+</textarea>
+</td>
+</tr>
+<tr>
+<td>
 <input type="button" value="棋譜送信" onClick="loadKif()">
 </form>
+</td>
+</tr>
+<tr>
+<td>
+テキストボックスに棋譜を貼り付けて、棋譜送信を押すと棋譜を再生することができるようになります。<a href="kif/kif.json">棋譜サンプル</a>
 </td>
 </tr>
 </table>

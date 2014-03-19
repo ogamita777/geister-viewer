@@ -14,6 +14,8 @@ function draw() {
     }
     var ctx = canvas.getContext('2d');
     
+    ctx.clearRect(0,0,384,384);
+
     // 盤の描画
     ctx.strokeStyle = "black"; // 線の色は黒に
     for (var i = 0; i <= WIDTH; i++) { // 縦線 
@@ -49,4 +51,16 @@ function draw() {
             }
         }
    }
+}
+
+
+function redraw() {
+    initBoard();
+    setStartBoard();
+
+    for (var i = 1; i <= currentNumber; i++) {
+        moveBoard(i);
+    }
+
+    draw();
 }
