@@ -58,7 +58,8 @@ function loadKif() {
             }
         } 
     }
-
+    
+    document.getElementById("boardSelect").selectedIndex = currentNumber;  //セレクトボックス現在の手数と対応させる
     draw();
 }
 

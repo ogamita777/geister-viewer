@@ -70,6 +70,7 @@ function buttonClick(id) {
             break;
         }
 
+        document.getElementById("boardSelect").selectedIndex = currentNumber //セレクトボックス現在の手数と対応させる
         redraw();
     }
 }
