@@ -28,7 +28,7 @@ var blackMode = false;
 // 初期化
 window.onload = function() {
     imgPiece = new Image(BOARD_SIZE*3,BOARD_SIZE*3);
-    imgPiece.src = "img/piece.png"; 
+    imgPiece.src = 'img/piece.png'; 
  
     initBoard(); // 盤の初期化
 
@@ -40,8 +40,8 @@ window.onload = function() {
 
 // 改行を削除する
 function deleteParagraph(data) {
-    data = data.replace(/\r\n/g, ""); // IE
-    data = data.replace(/\n/g, "");   // Firefox
+    data = data.replace(/\r\n/g, ''); // IE
+    data = data.replace(/\n/g, '');   // Firefox
    
     return data;
 }
@@ -70,7 +70,7 @@ function buttonClick(id) {
             break;
         }
 
-        document.getElementById("boardSelect").selectedIndex = currentNumber //セレクトボックス現在の手数と対応させる
+        document.getElementById('boardSelect').selectedIndex = currentNumber //セレクトボックス現在の手数と対応させる
         redraw();
     }
 }

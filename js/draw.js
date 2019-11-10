@@ -17,7 +17,7 @@ function draw() {
     ctx.clearRect(0,0,384,384);
 
     // 盤の描画
-    ctx.strokeStyle = "black"; // 線の色は黒に
+    ctx.strokeStyle = 'black'; // 線の色は黒に
     for (var i = 0; i <= WIDTH; i++) { // 縦線 
         ctx.moveTo(i * BOARD_SIZE + OFFSET, OFFSET);
         ctx.lineTo(i * BOARD_SIZE + OFFSET, BOARD_SIZE * HEIGHT + OFFSET);
@@ -68,13 +68,13 @@ function draw() {
    }
 
     //段と筋
-    ctx.font = "24pt serif"
-    ctx.textAlign = "center"
+    ctx.font = '24pt serif'
+    ctx.textAlign = 'center'
     for (var i = 1; i <= HEIGHT; i++) {
         ctx.fillText(i, OFFSET / 2, (6 - i) * BOARD_SIZE + OFFSET + OFFSET / 2 + 12);
     }
 
-    var row = ["a","b","c","d","e","f"];
+    var row = ['a','b','c','d','e','f'];
     for (var i = 1; i <= WIDTH; i++) {
         ctx.fillText(row[i-1], i * BOARD_SIZE + OFFSET / 2, BOARD_SIZE * HEIGHT + OFFSET + OFFSET / 2 + 12);
     }

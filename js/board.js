@@ -8,8 +8,8 @@
 
 // 駒を動かす
 function moveBoard(number) {
-    var from = kif.kif[number]["from"];
-    var to = kif.kif[number]["to"];
+    var from = kif.kif[number]['from'];
+    var to = kif.kif[number]['to'];
     
     var fromIndex = (HEIGHT - from[1]) * WIDTH + (from[0] - 1);
     var toIndex = (HEIGHT - to[1]) * WIDTH + (to[0] - 1);
@@ -33,33 +33,33 @@ function setStartBoard() {
 
 // selectでどれかの指し手が選択された
 function boardChange() {
-    currentNumber= document.getElementById("boardSelect").value;
+    currentNumber= document.getElementById('boardSelect').value;
     redraw();
 }
 
 // テキスト(json)から棋譜を読み込む
 function loadKif() {
-    var _kif = document.getElementById("kifText").value;
+    var _kif = document.getElementById('kifText').value;
     _kif = deleteParagraph(_kif); //改行を削除
 
     kif = JSON.parse(_kif);
 
     setStartBoard(kif);
 
-    var atoi = ["a", "b", "c", "d", "e", "f"]; 
+    var atoi = ['a', 'b', 'c', 'd', 'e', 'f']; 
     for (var i = 0; i < kif.kif.length; i++) {
         if(i === 0) {
-            document.getElementById("boardSelect").options[i] = new Option("開始局面",i);
+            document.getElementById('boardSelect').options[i] = new Option('開始局面',i);
         } else if(i !== kif.kif.length - 1) {
             if(i < 10) {
-            document.getElementById("boardSelect").options[i] = new Option("0" +  i +  ". " + atoi[kif.kif[i]["from"][0] - 1] + kif.kif[i]["from"][1] + " " + atoi[kif.kif[i]["to"][0] - 1] + kif.kif[i]["to"][1],i);
+            document.getElementById('boardSelect').options[i] = new Option('0' +  i +  '. ' + atoi[kif.kif[i]['from'][0] - 1] + kif.kif[i]['from'][1] + ' ' + atoi[kif.kif[i]['to'][0] - 1] + kif.kif[i]['to'][1],i);
             } else if (i >= 10) {
-                document.getElementById("boardSelect").options[i] = new Option(i +  ". " + atoi[kif.kif[i]["from"][0] - 1] + kif.kif[i]["from"][1] + " " + atoi[kif.kif[i]["to"][0] - 1] + kif.kif[i]["to"][1],i);
+                document.getElementById('boardSelect').options[i] = new Option(i +  '. ' + atoi[kif.kif[i]['from'][0] - 1] + kif.kif[i]['from'][1] + ' ' + atoi[kif.kif[i]['to'][0] - 1] + kif.kif[i]['to'][1],i);
             }
         } 
     }
     
-    document.getElementById("boardSelect").selectedIndex = currentNumber;  //セレクトボックス現在の手数と対応させる
+    document.getElementById('boardSelect').selectedIndex = currentNumber;  //セレクトボックス現在の手数と対応させる
     draw();
 }
 
