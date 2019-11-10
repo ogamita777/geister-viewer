@@ -1,55 +1,58 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <title>ガイスター棋譜再生</title>
 </head>
-<body>
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>  
-<script src="js/main.js"></script>
-<script src="js/draw.js"></script>
-<script src="js/board.js"></script>
 
-<h1>ガイスター棋譜再生</h1>
-<table border="0">
-<tr>
-<td>
-<canvas id="board" class="board" width="384" height="384">
-  Canvasに対応したブラウザを使って下さい。
-</canvas>
-<select id="boardSelect" size="20" onChange="boardChange()">
-</select>
-</td>
-</tr>
-<tr>
-<td>
-<input type="button" value="<<" onClick="buttonClick(-2)">
-<input type="button" value="<" onClick="buttonClick(-1)">
-<input type="button" value=">" onClick="buttonClick(1)">
-<input type="button" value=">>" onClick="buttonClick(2)">
-<input type="button" value="先手表示切替" onClick="changeMode(0)">
-<input type="button" value="後手表示切替" onClick="changeMode(1)">
-<td>
-</tr>
-<tr>
-<td>
-<form> 
-<textarea id="kifText" class="kifText" rows="10" cols="50">
+<body>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/draw.js"></script>
+  <script src="js/board.js"></script>
+
+  <h1>ガイスター棋譜再生</h1>
+  <table border="0">
+    <tr>
+      <td>
+        <canvas id="board" class="board" width="384" height="384">
+          Canvasに対応したブラウザを使って下さい。
+        </canvas>
+        <select id="boardSelect" size="20" onChange="boardChange()">
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="button" value="<<" onClick="buttonClick(-2)">
+        <input type="button" value="<" onClick="buttonClick(-1)">
+        <input type="button" value=">" onClick="buttonClick(1)">
+        <input type="button" value=">>" onClick="buttonClick(2)">
+        <input type="button" value="先手表示切替" onClick="changeMode(0)">
+        <input type="button" value="後手表示切替" onClick="changeMode(1)">
+      <td>
+    </tr>
+    <tr>
+      <td>
+        <form>
+          <textarea id="kifText" class="kifText" rows="10" cols="50">
 </textarea>
-</td>
-</tr>
-<tr>
-<td>
-<input type="button" value="棋譜送信" onClick="loadKif()">
-</form>
-</td>
-</tr>
-<tr>
-<td>
-テキストボックスに棋譜を貼り付けて、棋譜送信を押すと棋譜を再生することができるようになります。<a href="kif/kif.json">棋譜サンプル</a>
-</td>
-</tr>
-</table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="button" value="棋譜送信" onClick="loadKif()">
+        </form>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        テキストボックスに棋譜を貼り付けて、棋譜送信を押すと棋譜を再生することができるようになります。<a href="kif/kif.json">棋譜サンプル</a>
+      </td>
+    </tr>
+  </table>
 </body>
+
 </html>
